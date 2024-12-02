@@ -22,13 +22,21 @@ public class AccountController {
 
     /**로그인 한 유저가 날짜를 date 변수에 담아 넘겨주면 해당 날짜의 accountList 를 전달 */
     @GetMapping ("account/dayList/{date}")
-    public ResponseEntity<Object> oneDayAccount(@PathVariable LocalDate date) throws Exception {
-        return ResponseEntity.ok().body(
-                ApiResponse.builder().
-                        status(ResStatus.SUCCESS).
-                        message(ResMessage.SUCCESS).
-                        data(accountService.getOneDayAccount(date)).
-                        build());
+    public ResponseEntity<ApiResponse<List<AccountResDto>>> oneDayAccount(@PathVariable LocalDate date) {
+
+        ApiResponse<List<AccountResDto>> dto = new ApiResponse<>(
+                ResStatus.SUCCESS,
+                ResMessage.SUCCESS,
+                accountService.getOneDayAccount(date));
+
+        return ResponseEntity.ok(dto);
+        //todo 이거 활성화 하는게 목표임
+//        return (ResponseEntity<ApiResponse<List<AccountResDto>>>)ResponseEntity.ok().body(
+//                ApiResponse.builder().
+//                        status(ResStatus.SUCCESS).
+//                        message(ResMessage.SUCCESS).
+//                        data(accountService.getOneDayAccount(date)).
+//                        build());
     }
     //todo 확인을 위해 insert 부분 부터 만들것.
 }
