@@ -20,24 +20,19 @@ import java.util.List;
 public class ScheduleController {
     final private ScheduleService scheduleService;
 
-//    @GetMapping ("Schedule1")
-//    public ResponseEntity<?> getAllUser() {
-//        List<ScheduleResDto> list = scheduleService.AllSchedules();
-//        return ResponseEntity.ok(list);
-//    }
-
-//    @GetMapping ("Schedule/TitleAndTime/{}")
-//    public ResponseEntity<?> getTitleAndTime() {
-//        List<ScheduleResDto> list =
-//                scheduleService.SearchByTitleAndStartTime(String Title, LocalDateTime StartTime);
-//        return ResponseEntity.ok(list);
-//    }
-
     @GetMapping("schedule")
     public ResponseEntity<?> getschedule(@RequestParam Long userId) {
-//        return ResponseEntity.ok(scheduleService.getSchedule(userId));
-        return ResponseEntity.ok(true);
+        return ResponseEntity.ok(scheduleService.AllSchedules());
     }
+
+    @GetMapping ("Schedule/TitleAndTime/{title}/{startTime}")
+    public ResponseEntity<?> getTitleAndTime(@PathVariable String title, @PathVariable LocalDateTime startTime) {
+        List<ScheduleResDto> list =
+                scheduleService.SearchByTitleAndStartTime(title, startTime);
+        return ResponseEntity.ok(list);
+    }
+
+
 
 }
 

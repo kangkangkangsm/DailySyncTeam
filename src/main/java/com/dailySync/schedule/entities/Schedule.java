@@ -4,10 +4,14 @@ import com.dailySync.common.BaseEntity;
 import com.dailySync.user.entities.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Builder
 @Entity //이 클래스가 JPA엔티티임을 나타냄,
@@ -20,10 +24,10 @@ public class Schedule extends BaseEntity {
 //    private String userId; //필드을 정의한 것이고 데이터베이스의 테이블의 컬럼과 메핑
 
     @Column(nullable = false)
-    private String startTime;
+    private LocalDateTime startTime;
 
     @Column(nullable = false)
-    private String endTime;
+    private LocalDateTime endTime;
 
     @Column(nullable = false)
     private String title;
@@ -31,7 +35,8 @@ public class Schedule extends BaseEntity {
     @Column(nullable = false)
     private String description;
 
-    @Column(name = "user_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 }
 

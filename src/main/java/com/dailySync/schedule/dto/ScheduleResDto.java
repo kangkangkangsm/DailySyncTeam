@@ -35,8 +35,11 @@ public class ScheduleResDto {
         ScheduleResDto scheduleResDto = new ScheduleResDto();
         //ScheduleResDto 객체 생성
 
-        scheduleResDto.setStartTime(schedule.getStartTime());
-        scheduleResDto.setEndTime(schedule.getEndTime());
+
+
+
+       // scheduleResDto.setStartTime(schedule.getStartTime());
+       // scheduleResDto.setEndTime(schedule.getEndTime());
         scheduleResDto.setTitle(schedule.getTitle());
         scheduleResDto.setDescription(schedule.getDescription());
         //schedule객체의 userId값을 가져와서 schduleResDto로 설정

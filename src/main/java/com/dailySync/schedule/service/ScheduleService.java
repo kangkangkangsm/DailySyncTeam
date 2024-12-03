@@ -16,33 +16,28 @@ import java.util.List;
 public class ScheduleService {
     final private ScheduleRepository scheduleRepository;
 
-    public List<ScheduleResDto> AllSchedules() {
+   public List<ScheduleResDto> AllSchedules() {
         List<Schedule> list = scheduleRepository.findAll();
         List<ScheduleResDto> resList = new ArrayList<>();
         for (Schedule schedule : list) {
-            resList.add(ScheduleResDto.of(schedule));
+                resList.add(ScheduleResDto.of(schedule));
         }
         return resList;
     }
 
 
     //제목,시작날짜 검색하면 해당 학목들이 모두 나오도록
-//    public List<ScheduleResDto> SearchByTitleAndStartTime(String Title, LocalDateTime startTime) {
-//        List<Schedule> list = scheduleRepository.findByTitleAndStartTime(Title, startTime);
-//        List<ScheduleResDto> reList = new ArrayList<>();
-//        for (Schedule schedule : list) {
-//            reList.add(ScheduleResDto.of(schedule));
-//        }
-//        return reList;
+    public List<ScheduleResDto> SearchByTitleAndStartTime(String title, LocalDateTime startTime) {
+        List<Schedule> list = scheduleRepository.findByTitleAndStartTime(title, startTime);
+        List<ScheduleResDto> reList = new ArrayList<>();
+        for (Schedule schedule : list) {
+           reList.add(ScheduleResDto.of(schedule));
+       }
+       return reList;
     }
 
-    //테스트
-//    public List<Schedule> getSchedule(Long userId) {
-//        return scheduleRepository.findByUserId(userId);
-//    }
 
-
-
+}
 
 
 
