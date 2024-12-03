@@ -1,5 +1,6 @@
 package com.dailySync.account.service;
 
+import com.dailySync.account.dto.AccountListResDto;
 import com.dailySync.account.dto.AccountResDto;
 import com.dailySync.account.entity.Account;
 import com.dailySync.account.repository.AccountRepository;
@@ -20,8 +21,9 @@ public class AccountService {
     private final FavoriteAccountRepository favoriteRepository;
 
     /** 예시 */
-    public List<AccountResDto> getOneDayAccount(LocalDate date) {
+    public AccountListResDto getOneDayAccount(LocalDate date) {
         List<Account> oneDayList = accountRepository.findByUser_IdAndAccountDate(4L, date);
-        return oneDayList.stream().map(Account::toResDto).toList();
+
+        return new AccountListResDto(oneDayList.stream().map(Account::toResDto).toList());
     }
 }
