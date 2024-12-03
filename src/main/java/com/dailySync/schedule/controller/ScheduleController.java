@@ -3,6 +3,8 @@ package com.dailySync.schedule.controller;
 import com.dailySync.common.ApiResponse;
 import com.dailySync.constant.ResMessage;
 import com.dailySync.constant.ResStatus;
+import com.dailySync.schedule.service.ScheduleService;
+import com.dailySync.user.dto.UserResDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,5 +27,7 @@ public class ScheduleController {
                         build()
         );
     }
+
+
 
 }
