@@ -24,19 +24,26 @@ public class ScheduleService {
         }
         return resList;
     }
-    //제목 검색하면 모든 것이 검색되도록
 
-    public List<ScheduleResDto> SearchByTitleAndStartTime(String Title, LocalDateTime startTime) {
-        List<Schedule> list = scheduleRepository.findByTitle(Title, startTime);
-        List<ScheduleResDto> reList = new ArrayList<>();
-        for (Schedule schedule : list) {
-            reList.add(ScheduleResDto.of(schedule));
-        }
-        return reList;
+
+    //제목,시작날짜 검색하면 해당 학목들이 모두 나오도록
+//    public List<ScheduleResDto> SearchByTitleAndStartTime(String Title, LocalDateTime startTime) {
+//        List<Schedule> list = scheduleRepository.findByTitleAndStartTime(Title, startTime);
+//        List<ScheduleResDto> reList = new ArrayList<>();
+//        for (Schedule schedule : list) {
+//            reList.add(ScheduleResDto.of(schedule));
+//        }
+//        return reList;
     }
 
+    //테스트
+//    public List<Schedule> getSchedule(Long userId) {
+//        return scheduleRepository.findByUserId(userId);
+//    }
 
 
 
-}
+
+
+
 

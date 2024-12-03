@@ -35,7 +35,6 @@ public class ScheduleResDto {
         ScheduleResDto scheduleResDto = new ScheduleResDto();
         //ScheduleResDto 객체 생성
 
-        scheduleResDto.setUserId(schedule.getUserId());
         scheduleResDto.setStartTime(schedule.getStartTime());
         scheduleResDto.setEndTime(schedule.getEndTime());
         scheduleResDto.setTitle(schedule.getTitle());
