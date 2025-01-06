@@ -149,7 +149,7 @@ public class AccountController {
      */
     @Tag (name = "FAVORITE ACCOUNT", description = "가계부 즐겨찾기")
     @Operation (summary = "가계부 즐겨찾기 추가")
-    @PostMapping ("items/favor")
+    @PostMapping ("favor/items")
     public ResponseEntity<ApiResponse<Boolean>> createFavorAccountItem(
             @RequestBody AccountReqDto reqDto) throws Exception {
         Long userId = commonService.getUserId();
@@ -186,7 +186,7 @@ public class AccountController {
      */
     @Tag (name = "FAVORITE ACCOUNT", description = "가계부 즐겨찾기")
     @Operation (summary = "가계부 즐겨찾기 항목 수정 (전체)")
-    @PutMapping ("items/favor/{favorAccountId}")
+    @PutMapping ("favor/items/{favorAccountId}")
     public ResponseEntity<ApiResponse<Boolean>> updateFavorAccountItem(
             @Parameter (description = "즐겨찾기 항목 아이디") @PathVariable Long favorAccountId,
             @RequestBody AccountReqDto reqDto) throws Exception {
@@ -198,7 +198,7 @@ public class AccountController {
      */
     @Tag (name = "FAVORITE ACCOUNT", description = "가계부 즐겨찾기")
     @Operation (summary = "가계부 즐겨찾기 항목 수정 (일부)")
-    @PatchMapping ("items/favor/{favorAccountId}")
+    @PatchMapping ("favor/items/{favorAccountId}")
     public ResponseEntity<ApiResponse<Boolean>> partiallyUpdateFavorAccountItem(
             @Parameter (description = "즐겨찾기 항목 아이디")
             @PathVariable Long favorAccountId,
@@ -223,7 +223,7 @@ public class AccountController {
      */
     @Tag (name = "FAVORITE ACCOUNT", description = "가계부 즐겨찾기")
     @Operation (summary = "가계부 즐겨찾기 항목 삭제")
-    @DeleteMapping ("items/favor/{favorAccountId}")
+    @DeleteMapping ("favor/items/{favorAccountId}")
     public ResponseEntity<ApiResponse<Boolean>> deleteFavorAccountItem(
             @Parameter (description = "즐겨찾기 항목 아이디")
             @PathVariable Long favorAccountId) {

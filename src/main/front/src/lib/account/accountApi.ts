@@ -1,5 +1,5 @@
 import axios from '@/plugins/axios'
-import { Account } from '@/types'
+import type { Account } from '@/types'
 
 //조회
 export const getAccountList = async (year: number, month: number): Promise<Array<Account>> =>

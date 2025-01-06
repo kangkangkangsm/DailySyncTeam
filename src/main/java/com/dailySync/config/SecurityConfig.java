@@ -34,7 +34,6 @@ public class SecurityConfig {
                                 .requestMatchers("/api/login", "/api/signup").permitAll()
                                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                                 .anyRequest().authenticated()
-
                 )
                 .addFilterBefore(new JwtAuthenticationFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
@@ -46,6 +45,7 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://localhost:5173"); // 클라이언트 URL
+        config.addAllowedOrigin("http://localhost:5174"); // 클라이언트 URL
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);

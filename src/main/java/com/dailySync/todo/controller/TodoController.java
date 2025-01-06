@@ -5,9 +5,8 @@ import com.dailySync.todo.dto.*;
 import com.dailySync.todo.service.TodoService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -38,8 +37,6 @@ public class TodoController {
     public String autoGenerateTodoList() {
         Long userId = getUserId();
         // 자동 생성 로직 호출
-        System.out.println("로그인한 유저 아아디 -->" + userId);
-
         todoService.TodoLoginAutoListCreate(userId);
         return "유저아이디" + userId;
     }

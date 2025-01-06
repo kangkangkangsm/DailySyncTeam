@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Account } from '@/types'
+import type { Account } from '@/types'
 import {
   deleteAccountItem,
   getAccountList,
@@ -20,8 +20,8 @@ interface GroupedItem {
 }
 interface AccountState {
   accountList: Account[]
-  initYear: number
-  initMonth: number
+  initYear?: number
+  initMonth?: number
 }
 
 const groupByDate = (accountList: Account[]): GroupedData => {
@@ -64,8 +64,8 @@ const formatSumData = (list: Account[]): { plus: number; minus: number } => {
 export const useAccountStore = defineStore('accountStore', {
   state: (): AccountState => ({
     accountList: [],
-    initYear: null,
-    initMonth: null,
+    initYear: undefined,
+    initMonth: undefined,
   }),
 
   getters: {
@@ -77,7 +77,7 @@ export const useAccountStore = defineStore('accountStore', {
       return formatSumData(state.accountList)
     },
     monthFixedSum: (state): { plus: number; minus: number } => {
-      return formatSumData(state.accountList.filter((fixed) => fixed))
+      return formatSumData(state.accountList.filter(({ fixed }) => fixed))
     },
     fixedList: (state): Account[] => {
       return state.accountList.filter(({ fixed }) => fixed)

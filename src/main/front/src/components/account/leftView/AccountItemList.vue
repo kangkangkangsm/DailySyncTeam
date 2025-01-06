@@ -3,7 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { useDateStore } from '@/stores/account/dateStore'
 import { useAccountStore } from '@/stores/account/accountStore'
 import AccountItem from '@/components/account/leftView/AccountItem.vue'
-import { Account } from '@/types'
+import type { Account } from '@/types'
 
 const props = defineProps({
   propDate: {

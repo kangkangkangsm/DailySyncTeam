@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { categories } from '@/constants/accountCategory'
 import { formatCurrencyKRW } from '@/lib/account/accountLib'
 import { useAccountStore } from '@/stores/account/accountStore'
-import { Account } from '@/types'
+import type { Account } from '@/types'
 import AccountPopup from '@/components/account/AccountPopup.vue'
 
 const props = defineProps<{

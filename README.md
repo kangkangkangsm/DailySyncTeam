@@ -1,51 +1,119 @@
-### 프로젝트 배경 및 목적
+## 프로젝트 배경 및 목적
 
-- 현재 시중에 나와 있는 스케줄 관리, 식단 관리, To-Do 리스트, 가계부 관리 등의 웹/앱 서비스는 기능이 지나치게 복잡하거나, 필요한 기능을 사용하려면 유료 버전으로 업그레이드해야 하는 경우가 많습니다.
-    
-     일부 서비스는 **불필요한 기능**이 포함되어 있어 사용자가 원하는 기능만을 간편하게 사용하기 어렵고 반대로, 기능이 너무 제한적인 서비스들은 여러 개의 앱을 동시에 사용해야 하는 불편함이 존재합니다.
-    
-- 이러한 문제를 해결하고자, **스케줄 관리**, **식단 관리**, **To-Do 리스트**, **가계부 관리** 등을 하나의 웹과 앱에서 간편하게 제공하는 시스템을 만들기로 했습니다.
-    
-     웹에서는 **세부 설정**을 통해 사용자가 맞춤형 관리가 가능하도록 하고, 앱에서는 **간단하고 직관적인 사용**이 가능하도록 설계하여, 여러 서비스를 사용하는 번거로움 없이 하나의 시스템으로 모든 관리 작업을 효율적으로 처리할 수 있도록 하는 것이 목표입니다.
-    
+- 현재 시중에 나와 있는 일정,식단,가계부,To_Do 관리 웹/앱 서비스들은
+  기능이 많아 복잡하거나 필요한 기능은 유료 버전으로 사용해야 하는 불편함.
+- 이러한 문제를 해결 하기 위해 개인 맞춤형 관리 시스템을 웹으로 개발하여
+  본인이 쓰기 가장 쉽고 편하게 UI/UX 를 구성.
+- 사용중 불편한 부분과 개선할 부분을 즉각 수정하여 사용할 수 있는 직접 사용할
+  나만의 웹페이지 제작이 목표.
+- ### 프로젝트 목표 기능
+    - **기존 To-Do 기능 강화**: 사용자가 주기적으로 할 일을 설정하고, 이를 매일 자동으로 갱신하여 관리.
+    - **고정 소득/지출 관리**: 사용자는 매월 고정된 소득과 지출 항목을 설정하여, 매월 반복적으로 갱신되는 항목들을 자동으로 확인하고 관리.
 
----
+## 개발 환경
 
-### 개발 환경
+- ### BackEnd - Spring Boot
+    - 기본적인 설정이 잘 갖추어져 있고 생태계가 풍부해 정보를 찾기 수월.
+    - **Express** 서버에 비해 체계적인 프로젝트 구조를 갖추고 **유지보수**가 유연하고 **가독성** 향상
+    - **JPA** 를 사용해 DB에 종속되지 않으며 개발 **편의성** 증가.
+    - **Spring Security** 를 사용해 기본적인 **인증/인가** 기능을 구현.
+- ### FrontEnd - Vue.js
+    - **Component** 기반 구조 덕분에 프로젝트 구조화에 용이.
+    - 비교적 편한 **Vue**의 상태관리 라이브러리인 **Pinia**의 편리함.
+    - **React** 보다 속도가 빠르고 직관적인 문법과 **Script,template,style** 로 명확하게 나누어진
+      구조이기 때문에 직관적인 문법 및 개발속도 증가.
+- ### DataBase - MySQL
+    - **AWS**의 **EC2**와 유사한 **Oracle** 의 **Cloud Compute** 서비스를 사용하여 **Ubuntu**환경에 **MySQL** 설치 및 사용.
 
-- DB - Oracle Cloud - MySQL
-    - 협업의 효율성을 높이고, 각자의 환경에 관계없이 동일한 개발 환경을 유지하기 위해 **Oracle Cloud의 Compute Cloud**를 활용하여 인프라를 구성하였습니다.
-    - AWS의 RDS와 탄력적 IP는 사용량에 따라 요금이 발생하므로, **Oracle Cloud에서 제공하는 무료 Public IP**를 사용하여 비용을 최소화하였습니다.
-    - Ubuntu 서버에 MySQL을 설치하고, 포트 번호를 통해 데이터베이스에 접근할 수 있게 구성하였습니다.
-    - **Oracle DB**는 고급 기능이 풍부하고 강력하지만, 이를 활용하지 않으면 성능을 최대한 끌어내기 어려우며, 설치와 관리가 복잡합니다. 반면, **MySQL**은 간단한 쿼리와 읽기 중심의 작업에서 우수한 성능을 발휘하여, 복잡한 설정 없이 빠르게 개발과 운영을 진행할 수 있습니다.
-- **BackEnd - Spring Boot**
-    - **Spring Boot**
-        - **Spring Boot**는 웹 애플리케이션을 빠르게 개발할 수 있는 프레임워크로, 자동 설정과 기본적인 설정이 이미 잘 되어 있어 프로젝트 세팅이 간편하고 시간을 절약할 수 있습니다.
-        - **Express** 서버와 비교했을 때, Spring Boot는 보다 체계적인 프로젝트 구조를 제공하여 애플리케이션이 커져도 구조를 유지할 수 있습니다. 이는 코드의 유지보수성과 가독성을 높이고, 팀 프로젝트에서 협업을 더 효율적으로 진행할 수 있게 해줍니다. 특히, 모듈화된 설계 덕분에 각자가 맡은 부분을 독립적으로 개발하면서도 전체 프로젝트 구조를 쉽게 파악할 수 있어 협업에 유리한 환경을 제공합니다.
-    - **Spring Security**
-        - 보안은 모든 웹 애플리케이션에서 중요한 요소이기 때문에, **Spring Security**를 사용하여 기본적인 인증 및 권한 관리 기능을 구현했습니다. 보안 표준을 따르며, 이번 프로젝트에서는 기본적인 보안 설정만 적용하였습니다.
-    - **JPA**
-        - **MyBatis**를 이미 다뤄본 경험이 있기 때문에, 이번에는 **JPA**를 사용해 보기로 했습니다. JPA는 SQL을 직접 작성하는 대신 객체 중심으로 데이터를 처리할 수 있어 코드가 깔끔하고 유지보수하기 쉬운 장점이 있습니다. 또한, 현재 많이 사용되는 기술이기 때문에 기술 스택을 확장하는 데도 도움이 될 것이라고 판단했습니다.
-- FrontEnd - Vue.js
-    - **Vue.js**는 가볍고 빠르며, **초기 학습 곡선이 낮고 직관적인 문법** 덕분에 빠르게 개발할 수 있습니다.
-        
-         컴포넌트 기반의 구조 덕분에 프로젝트를 잘 구조화할 수 있으며, UI의 재사용성을 높여 유지보수를 용이하게 만듭니다. 
-        
-         **다른 라이브러리나 프레임워크**와도 쉽게 통합할 수 있어 기존에 알고 있는 기술들과의 호환성도 뛰어납니다.
-        
-- Build Tool - Maven
-    - **Maven**을 선택한 이유는 **설정이 간단하고 사용하기 편리**하기 때문입니다. Gradle도 좋은 도구이지만, Maven은 **표준화된 구조**와 **간편한 의존성 관리** 덕분에 빠르게 프로젝트를 시작할 수 있습니다.
-        
-         또한, **다양한 문서와 커뮤니티 지원** 덕분에 문제가 생겼을 때 쉽게 해결할 수 있습니다.
-        
-- Tools
-    - Git & GitHub
-        - **Git**은 코드 변경 사항을 추적하고 협업을 효율적으로 할 수 있게 해주는 버전 관리 도구입니다. **GitHub**는 원격 저장소로, 팀원들과 코드 공유 및 협업을 쉽게 할 수 있어 선택했습니다.
-    - VsCode
-    - **VsCode**는 가볍고 빠른 코드 에디터로, 다양한 확장 기능 덕분에 **프론트엔드 개발**에 적합하여 사용했습니다.
-    - IntelliJ
-        - **Java**와 **Spring Boot** 개발에 강력한 IDE로, 코드 자동 완성, 디버깅 등 많은 기능을 제공해 **백엔드 개발**에 적합해 선택했습니다.
-    - MySQL Workbench
-        - MySQL 데이터베이스를 관리하는 GUI 도구로, **쿼리 작성 및 데이터베이스 관리**를 편리하게 할 수 있어 채택했습니다.
-        - 원격 서버에 안전하게 접속할 수 있는 SSH 클라이언트로, **서버 관리 및 배포** 작업을 효율적으로 할 수 있어 선택했습니다.
-    - Termius
+## Tools
+
+- **Git&GitHub** - 협업 및 코드 변경 사항 추적, 원격 저장소
+- **Visual Studio Code ( VsCode )** - Frontend (Vue)
+- **IntelliJ** - Backend (Spring boot)
+- **Oracle Cloud** - 배포 및 DB
+- **BeeKeeper Studio** - DB 확인
+- **Termius** - Ubuntu 원격 SSH 연결
+
+## 개발 기간
+
+- **2024.12** Team 협업 시작 및 종료.
+- **Any** 개인 리펙토링 예정.
+    - 각자의 편한 기능이 아닌 나에게 편한 기능으로 수정.
+    - 코드 최적화 및 성능 개선.
+    - 모든 코드의 Composition Api 및 TypeScript 리펙토링.
+
+## 나의 역할
+
+- **역할**: Spring boot 구조 설계,Vue 구조 설계, 유저 인증/인가를 위해 SpringSecurity 구현, 가계부 기능 구현
+- **로그인 JWT 구현**
+  - **장점**
+    - 상태 없는 인증(Stateless) : 서버 세션을 유지할 필요가 없고 확장성 유리.
+    - 간편한 사용자 정보 전달(현재 프로젝트에서는 ID)
+  - **단점**
+    - 토큰 유효 기간 관리 문제 : 현재 1주일로 설정. 기간내 접속 시 토큰 재발급을 통해 자동 로그인 구현.
+    - **Security**의 기본 인증 방식과는 다른 방식으로 인증/인가를 구현해야합.
+  - 로그인/ 회원가입/ SWAGGER 페이지 외에 모든 요청에 대해 JWT 인증 요구
+    ```
+    //SecurityConfig
+  
+    @Bean
+      public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+          http
+                  .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                  .csrf(AbstractHttpConfigurer::disable)
+                  .authorizeHttpRequests(authorizeRequests ->
+                          authorizeRequests
+                                  .requestMatchers("/api/login", "/api/signup").permitAll()
+                                  .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                                  .anyRequest().authenticated()
+                  )
+                  .addFilterBefore(new JwtAuthenticationFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
+
+          return http.build();
+      }
+  
+    //JwtAuthenticationFilter
+    ```
+  - 필터 생성
+    ```
+    @RequiredArgsConstructor
+    public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+      private final JwtUtil jwtUtil;
+
+      @Override
+      protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+          String token = extractToken(request);
+          if(token != null && jwtUtil.validateToken(token)){
+              Long userId = jwtUtil.extractUserId(token);
+              SecurityContextHolder.getContext().setAuthentication(
+                      new JwtAuthenticationToken(userId,token)
+              );
+          }
+
+          filterChain.doFilter(request, response);
+      }
+    ```
+  - 그외 JwtUtil 및 JwtAuthenticationToken 참조.
+- 각각의 사용자가 혼자서만 사용하는 공간이기 때문에 실시간 변화에 예민 할 필요 없음
+  - 월 별 정보를 그대로 받아 프론트의 상태관리를 최대한 활용해 서버와 통신 횟수를 최소화.
+  - 입력 및 수정, 삭제 기능 외의 GET 요청은 현재 보고 있는 월이 바뀔 때만 해당 월에 대한 조회.
+- 서버와 통신할 때 응답양식을 통일하기 위해 ApiResponse 객체 도입.
+- 예외처리를 위해 가독성을 높이기 위해 GlobalException 도입.
+
+
+## 프로젝트 진행 이미지
+
+- 프로젝트 협업 Notion
+  
+  https://adjoining-acorn-1b0.notion.site/DailySync-1467dd3a4f0e80518440dc7a01a04667
+
+<img src="./ideaImg.jpg"/>
+
+## Stack
+
+<img src="https://img.shields.io/badge/vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white">
+<img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
+<img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
