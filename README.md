@@ -28,9 +28,9 @@
     - Git&GitHub - 협업 및 코드 변경 사항 추적, 원격 저장소
     - Visual Studio Code ( VsCode ) - Frontend (Vue)
     - IntelliJ - Backend (Spring boot)
-    - Oracle Cloud - 배포 및 DB
     - BeeKeeper Studio - DB 확인
     - Termius - Ubuntu 원격 SSH 연결
+    - AWS - 서버 및 DB 배포 
 - 개발기간 
     - **2024.12 Team 협업 시작 및 종료.**
 
