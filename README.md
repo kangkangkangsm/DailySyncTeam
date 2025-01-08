@@ -33,7 +33,8 @@
     - AWS - 서버 및 DB 배포 
 - 개발기간 
     - **2024.12 Team 협업 시작 및 종료.**
-
+- 배포 
+    - [프로젝트 웹사이트](http://www.myapp.com) (현재 임시 IP: `http://52.79.238.2`)
 ## 👥 팀원 
 
 ### **강선민**  [![GitHub](https://img.shields.io/badge/GitHub-kangseonmin-blue?logo=github)](https://github.com/kangkangkangsm)
@@ -43,4 +44,4 @@
 ### **하현수**  [![GitHub](https://img.shields.io/badge/GitHub-haHyeonsoo-blue?logo=github)](https://github.com/nihilism011)
 - 가계부 / 로그인 / 회원가입 / 대시보드  
 ### **이혜인** [![GitHub](https://img.shields.io/badge/GitHub-leehyein-blue?logo=github)](https://github.com/dgl1111)
-- 일정 / 대시보
+- 일정 / 대시보드
