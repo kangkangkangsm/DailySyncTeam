@@ -45,6 +45,6 @@
 ### **김태환**  [![GitHub](https://img.shields.io/badge/GitHub-kimtaehwan-blue?logo=github)](https://github.com/KTH8962)
 - 식단 관리 / 대시보드 / CSS 전반 
 ### **하현수**  [![GitHub](https://img.shields.io/badge/GitHub-haHyeonsoo-blue?logo=github)](https://github.com/nihilism011)
-- 가계부 / 로그인 / 회원가입 / 대시보드  
+- 가계부 / 로그인 / 회원가입 / 대시보드 / Spring Security
 ### **이혜인** [![GitHub](https://img.shields.io/badge/GitHub-leehyein-blue?logo=github)](https://github.com/dgl1111)
 - 일정 / 대시보드
