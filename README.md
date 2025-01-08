@@ -34,7 +34,7 @@
 - 개발기간 
     - **2024.12 Team 협업 시작 및 종료.**
 - 배포 
-    - [프로젝트 웹사이트](http://www.myapp.com) (현재 임시 IP: `http://52.79.238.2`)
+    - [프로젝트 웹사이트](http://52.79.238.2)
 ## 👥 팀원 
 
 ### **강선민**  [![GitHub](https://img.shields.io/badge/GitHub-kangseonmin-blue?logo=github)](https://github.com/kangkangkangsm)
