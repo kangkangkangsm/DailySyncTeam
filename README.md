@@ -32,7 +32,8 @@
     - Termius - Ubuntu 원격 SSH 연결
     - AWS - 서버 및 DB 배포 
 - 개발기간 
-    - **2024.12 Team 협업 시작 및 종료.**
+    - **2024.11.22 ~ 12.02 Team 회의.**
+    - **2024.12.02 ~ 12.16 Team 개발.**
 - 아이디어 & 회의 
     -  [프로젝트 회의](https://adjoining-acorn-1b0.notion.site/DailySync-1467dd3a4f0e80518440dc7a01a04667?p=1467dd3a4f0e80d6988dd1d10202b301&pm=s)
 - 배포 
