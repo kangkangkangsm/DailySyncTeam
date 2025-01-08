@@ -35,6 +35,8 @@
     - **2024.12 Team 협업 시작 및 종료.**
 - 배포 
     - [프로젝트 웹사이트](http://52.79.238.2)
+- 아이디어 & 회의 
+    - https://adjoining-acorn-1b0.notion.site/DailySync-1467dd3a4f0e80518440dc7a01a04667?p=1467dd3a4f0e80d6988dd1d10202b301&pm=s
 ## 👥 팀원 
 
 ### **강선민**  [![GitHub](https://img.shields.io/badge/GitHub-kangseonmin-blue?logo=github)](https://github.com/kangkangkangsm)
